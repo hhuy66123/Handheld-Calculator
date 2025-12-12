@@ -2,6 +2,7 @@ name: build
 
 on:
   push:
+    branches: [ "master" ]
   pull_request:
 
 jobs:
@@ -9,8 +10,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - name: Install build tools
+        run: sudo apt-get update && sudo apt-get install -y build-essential
+
       - name: Build
         run: gcc -O2 -Wall -std=c11 -o handheld_calc main.c postfix.c findroot.c -lm
+
       - name: Smoke test
         run: |
-          printf '%s\n' 'x-1' | ./handheld_calc | head -n 20
+          printf '%s\n' 'x-1' | ./handheld_calc | head -n 30
