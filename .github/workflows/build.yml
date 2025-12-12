@@ -1,0 +1,26 @@
+name: build
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+
+jobs:
+  windows-msys2:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: msys2/setup-msys2@v2
+        with:
+          msystem: MINGW64
+          update: true
+          install: mingw-w64-x86_64-gcc
+
+      - name: Build
+        shell: msys2 {0}
+        run: gcc -O2 -Wall -std=c11 -o handheld_calc.exe main.c postfix.c findroot.c -lm
+
+      - name: Smoke test
+        shell: msys2 {0}
+        run: printf '%s\n' 'x-1' | ./handheld_calc.exe | head -n 30
