@@ -1,0 +1,8 @@
+
+ 
+Nhap bieu thuc: Output Tokens: x 1.00 - 
+
+Newton Raphson tim duoc nghiem la: 1.000000
+Thoi gian tim nghiem: 0.002597 giay
+
+Ket qua voi nghiem 1.00000 la: 0.000

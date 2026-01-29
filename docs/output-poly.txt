@@ -1,0 +1,7 @@
+
+ 
+Nhap bieu thuc: Output Tokens: x 14.00 ^ 3.00 x 12.00 ^ * - 7.00 x 9.00 ^ * + 5.00 x 8.00 ^ * 2.00 x 6.00 ^ * + - 4.00 x 5.00 ^ * 11.00 x 3.00 ^ * - 6.00 x 2.00 ^ * + + 20.00 x * 50.00 - - 
+Secant tim duoc nghiem la: -2.034229
+Thoi gian tim nghiem: 0.554226 giay
+
+Ket qua voi nghiem -2.03423 la: 0.002
